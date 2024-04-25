@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Trabajo para entender los formularios-->
+    <!--Video explicativo de los formularios: 'https://www.youtube.com/watch?v=RXS3esRlNK4' -->
+
+
+    <form action="" target="_blank" method="">
+        <!--El atributo 'action' define la accion que se va a realizar cuando apretamos el boton enviar. Normalmente se envian a una pagina donde se procesan estos datos.-->
+        <!--El atributo 'target' que especifica que pasa una vez que se envian los datos, a donde te lleva-->
+        <!--El atributo 'method'. El metodo 'get' NO se usa para datos confidenciales, este metodo es mejor para datos no seguros. El metodo 'post' es mas para datos confidenciales.-->
+        <!--El atributo 'name' es la key del dato. Cada input tiene que tener un name para saber que datos se ingresan en cada input-->
+        <!--Tambien se puede agrupar los datos con 'fieldset', se usa para agrupar datos relacionados en un formulario. Dentro del fieldset se utiliza el elemento '<legend>' que define el titulo del fieldset. Podria quedar como un recuadro dentro del formulario con un titulo por arriba del recuadro-->
+        <!--El elemento input es el MAS importante-->
+
+        <!--El 'label' seria el nombre (la etiqueta, la aclaracion) que lleva el input-->
+
+        <fieldset>
+            <legend>Datos personales</legend>
+            <label for="nombre"> Nombre Completo:</label>
+            <input type="text" name="nombre" id="nombre">
+            <!--Para relacion el 'label' y el 'input', usamos el 'for' en el label y el 'id' en el input-->
+            <label for="tel"> Telefono:</label>
+            <input type="number" name="telefono" id="tel">
+
+            <label for="email"> Correo Electronico:</label>
+            <input type="email" name="email" id="email">
+        </fieldset>
+        <fieldset>
+            <legend>Empresa:</legend>
+            <label for="nombre1"> Nombre Completo:</label>
+            <input type="text" name="empresa" id="nombre1">
+
+            <label for="usuario"> Redes Sociales:</label>
+            <input type="text" name="usuario" id="usuario">
+        </fieldset>
+
+        <input type="text" name="" id=""><!--para lineas de texto, ejempo: nombres-->
+
+        <input type="radio"> <!--para seleccionar varias opciones, ejeplo: 'radio button'-->
+
+        <input type="submit" value="Probando" name="" id="">
+        <!--seria el boton de enviar del formulario. Para poder ponerle un nombre al boton, usamos el atributo 'value'-->
+
+        <!--Atributos de los formularios:
+            -accept-charset: especifica el charset de los datos enviados
+            -action: especifica la URL a donde se enviara el formulario
+            -autocomplete: define si el navegador deberia mostrar el autocompletado
+            -enctype: especifica la codificacion de los datos
+            -method: define el protocolo HTTP para enviar los datos
+            -name: define el nombre a usar para identificar el formulario
+            -novalidate: especifica si el navegador tiene que validar el formulario
+            -target: define donde se tiene que abrir la URL de destino
+        -->
+
+        <!--Tambien existe la etiqueta 'button', lo que seria un boton.-->
+        <button>boton</button>
+        <button type="submit">Enviar</button>
+        <!--Por defecto, si no se le pone ningun atributo a la etiqueta, se le pone el tipo 'submit', es decir que envia el formulario. Al apretar el boton, se recarga la pagina.-->
+        <button type="button" onclick="alert('HOLA')">boton</button>
+        <!--Al ponerle el tipo 'button', el cual hace que no se recargue la pagina. Tambien se puede poner el atributo 'onclick', con el cual podemos hacer que ejecute una funcion de javascript-->
+
+        <!--Otro elemento que tienen los formularios es la etiqueta 'datalist'. Es un input que tiene una lista en caso de necesidad.-->
+        <input list="colores">
+        <datalist id="colores">
+            <option>Rojo</option>
+            <option>Verde</option>
+            <option>Amarillo</option>
+            <option>Rosa</option>
+            <option>Negro</option>
+        </datalist>
+
+        <fieldset>
+            <label for="usuario">Usuario:</label>
+            <input type="text" name="usuario" id="usuario">
+            <label for="contraseña">Contraseña</label>
+            <input type="password" id="contraseña" name="pass">
+        </fieldset>
+
+        <!--Es un boton que nos permite resetear el formulario-->
+        <input type="reset" value="resetear">
+
+        <fieldset>
+            <!--Aparecen puntitos para elegir UNA opcion-->
+            <input type="radio" name="color" id="red" value="red">
+            <label for="red">Rojo</label>
+
+            <input type="radio" name="color" id="blue" value="blue">
+            <label for="blue">Azul</label>
+
+            <input type="radio" name="color" id="green" value="green">
+            <label for="green">Verde</label>
+        </fieldset>
+        <fieldset>
+            <!--Aparecen puntitos/cajas para elegir una o varias opciones-->
+            <input type="checkbox" name="red" id="red" value="red">
+            <label for="red">Rojo</label>
+
+            <input type="checkbox" name="blue" id="blue" value="blue">
+            <label for="blue">Azul</label>
+
+            <input type="checkbox" name="green" id="green" value="green">
+            <label for="green">Verde</label>
+        </fieldset>
+
+        <fieldset>
+            <label for="color">Elegir Color</label>
+            <!--Un seleccionador de colores-->
+            <input type="color" name="color" id="color">
+        </fieldset>
+
+        <fieldset>
+            <!--Para elegir una fecha y/o hora-->
+            <input type="date" name="date" id="">
+            <input type="datetime-local" name="fecha" id="">
+            <!--Para elegir un mes-->
+            <input type="month" name="mes" id="">
+            <!--Para elegir la hora-->
+            <input type="time" name="hora" id="">
+            <!--Para elegir una semana-->
+            <input type="week" name="week" id="">
+        </fieldset>
+
+        <fieldset>
+            <!--Para elegir un archivo-->
+            <input type="file" name="file" id="">
+        </fieldset>
+
+        <fieldset>
+            <label for="numero">Numeros</label>
+            <!--Para poner numeros-->
+            <input type="number" name="numeros" id="numero">
+        </fieldset>
+
+        <fieldset>
+            <label for="rango">Rango de ""</label>
+            <!--Para poner un rango de algo-->
+            <input type="range" name="num"  min="1" max="5" id="rango">
+        </fieldset>
+
+        <fieldset>
+            <label for="buscar">Buscar</label>
+            <!--Es un buscador-->
+            <input type="search" name="busqueda" id="buscar">
+        </fieldset>
+
+        <fieldset>
+            <label for="url">URL del sitio</label>
+            <input type="url" name="url" id="url">
+        </fieldset>
+
+
+
+    </form>
+
+</body>
+
+</html>
